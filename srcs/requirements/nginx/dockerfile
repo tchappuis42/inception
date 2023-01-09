@@ -1,0 +1,10 @@
+FROM alpine:3.16
+
+RUN apk update && apk upgrade
+RUN apk add nginx
+RUN apk add openssl
+RUN openssl req -new -newkey rsa:2048 -batch -nodes -keyout /etc/ssl/tchappui.42.key -out /etc/ssl/tchappui.42.pem;
+
+COPY ./conf/nginx.conf /etc/nginx/my_nginx.conf
+
+CMD ["nginx", "-g", "daemon off;"]

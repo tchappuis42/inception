@@ -1,0 +1,53 @@
+version: "3.7"
+services:
+
+    nginx:
+        build: requirements/nginx
+        ports:
+            - '443:443'
+        volumes:
+            - "wordpress:/var/www/html"
+         #   - "~/data/wordpress:/var/www/html"
+        environment:
+            - .env
+        depends_on:
+            - wordpress
+        networks:
+            - inception
+        restart: always
+
+    mysql:
+        tty: true
+        build: requirements/mariadb
+        ports:
+            - '3306:3306'
+        volumes:
+            - "db-data:/var/lib/mysql"
+          #  - "~/data/db-data:/var/lib/mysql"
+        environment:
+            - .env
+        networks:
+            - inception
+        restart: always
+
+    wordpress:
+        tty: true
+        build: requirements/wordpress
+        ports:
+        - '9000:9000'
+        volumes:
+            - "wordpress:/var/www/html"
+ #           - "~/data/wordpress:/var/www/html"
+        environment:
+           - .env
+        depends_on:
+            - mysql
+        networks:
+            - inception
+        restart: always
+
+networks:
+  inception: 
+volumes:
+    wordpress:
+    db-data:
