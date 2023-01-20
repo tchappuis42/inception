@@ -6,12 +6,12 @@
 #    By: tchappui <tchappui@student.42lausanne.c    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/15 14:56:24 by tchappui          #+#    #+#              #
-#    Updated: 2022/12/15 15:43:50 by tchappui         ###   ########.fr        #
+#    Updated: 2023/01/20 15:50:05 by tchappui         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
-RM		= rm -f
+RM		= rm -rf
 
 SRCS	= -f srcs/docker-compose.yml
 

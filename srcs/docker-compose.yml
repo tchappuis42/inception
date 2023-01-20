@@ -6,8 +6,8 @@ services:
         ports:
             - '443:443'
         volumes:
-            - "wordpress:/var/www/html"
-         #   - "~/data/wordpress:/var/www/html"
+#            - "wordpress:/var/www/html"
+            - "~/data/wordpress:/var/www/html"
         environment:
             - .env
         depends_on:
@@ -22,8 +22,8 @@ services:
         ports:
             - '3306:3306'
         volumes:
-            - "db-data:/var/lib/mysql"
-          #  - "~/data/db-data:/var/lib/mysql"
+#            - "db-data:/var/lib/mysql"
+            - "~/data/db-data:/var/lib/mysql"
         environment:
             - .env
         networks:
@@ -36,8 +36,8 @@ services:
         ports:
         - '9000:9000'
         volumes:
-            - "wordpress:/var/www/html"
- #           - "~/data/wordpress:/var/www/html"
+ #           - "wordpress:/var/www/html"
+            - "~/data/wordpress:/var/www/html"
         environment:
            - .env
         depends_on:
