@@ -5,3 +5,5 @@ RUN mkdir -p /var/www/html/ && cd /var/www/html && wget http://wordpress.org/lat
 #RUN chmod 777 /var/www/html && mv 
 
 COPY ./conf/wp-config.php /
+
+CMD ["/usr/sbin/php-fpm7", "-F"]

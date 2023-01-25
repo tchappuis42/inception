@@ -2,8 +2,11 @@ FROM alpine:3.15
 
 RUN apk update && apk upgrade
 RUN apk add mariadb mariadb-client
-RUN chmod 755 /var/lib/mysql
+RUN chmod 777 /var/lib/mysql
+RUN mkdir /var/run/mysqld; \
+	chmod 777 /var/run/mysqld
 
 COPY ./conf/mariadb.cnf /etc/my.cnf.d/
+COPY ./tools/maria.sh maria.sh
 
-CMD ["/bin/sh"]
+CMD ["sh", "maria.sh"]
