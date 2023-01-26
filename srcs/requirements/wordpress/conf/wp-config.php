@@ -20,22 +20,22 @@
 
 // ** Database settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */  //getenv php
-define( 'DB_NAME', 'database_name_here' ); //DATABASE_NAME=mariaDB
+define( 'DB_NAME', 'mariaDB' ); //DATABASE_NAME=mariaDB
 
 /** Database username */
-define( 'DB_USER', 'username_here' ); //MYSQL_USER=tchappui42
+define( 'DB_USER', 'tchappui42' ); //MYSQL_USER=tchappui42
 
 /** Database password */
-define( 'DB_PASSWORD', 'password_here' ); //MYSQL_PASSWORD=StrongPassword
+define( 'DB_PASSWORD', '42' ); //MYSQL_PASSWORD=42
 
 /** Database hostname */
-define( 'DB_HOST', 'localhost' ); //DB_HOST: mariadb:3306
+define( 'DB_HOST', 'maria:3306' ); //DB_HOST: mariadb:3306
 
 /** Database charset to use in creating database tables. */
-//define( 'DB_CHARSET', 'utf8' );
+define( 'DB_CHARSET', 'utf8' );
 
 /** The database collate type. Don't change this if in doubt. */
-//define( 'DB_COLLATE', '' );
+define( 'DB_COLLATE', '' );
 
 /**#@+
  * Authentication unique keys and salts.

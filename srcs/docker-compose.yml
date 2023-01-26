@@ -6,8 +6,7 @@ services:
         ports:
             - '443:443'
         volumes:
-#            - "wordpress:/var/www/html"
-            - "~/data/wordpress:/var/www/html"
+            - "/home/tchappui/data/wordpress:/var/www/html"
         env_file:
             - .env
         depends_on:
@@ -22,8 +21,7 @@ services:
         ports:
             - '3306:3306'
         volumes:
-#            - "db-data:/var/lib/mysql"
-            - "~/data/db-data:/var/lib/mysql"
+            - "/home/tchappui/data/db-data:/var/lib/mysql"
         env_file:
           #- DATABASE_NAME=mariaDB
             - .env
@@ -32,13 +30,11 @@ services:
         restart: always
 
     wordpress:
-        tty: true
         build: requirements/wordpress
         ports:
         - '9000:9000'
         volumes:
- #           - "wordpress:/var/www/html"
-            - "~/data/wordpress:/var/www/html"
+            - "/home/tchappui/data/wordpress:/var/www/html"
         env_file:
            - .env
         depends_on:

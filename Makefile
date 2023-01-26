@@ -43,7 +43,7 @@ start:
 
 clean: 
 		$(DOCKERCOMPOSE) $(SRCS) down --volumes
-		$(RM) ~/data/wordpress/*
-		$(RM) ~/data/db-data/*
+		$(RM) /home/tchappui/data/wordpress/*
+		$(RM) /home/tchappui/data/db-data/*
 		
 re:			clean all
