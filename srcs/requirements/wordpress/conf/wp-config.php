@@ -19,17 +19,17 @@
  */
 
 // ** Database settings - You can get this info from your web host ** //
-/** The name of the database for WordPress */  //getenv php
-define( 'DB_NAME', 'mariaDB' ); //DATABASE_NAME=mariaDB
+/** The name of the database for WordPress */
+define( 'DB_NAME', 'mariaDB' );
 
 /** Database username */
-define( 'DB_USER', 'tchappui42' ); //MYSQL_USER=tchappui42
+define( 'DB_USER', 'tchappui42' );
 
 /** Database password */
-define( 'DB_PASSWORD', '42' ); //MYSQL_PASSWORD=42
+define( 'DB_PASSWORD', '42' );
 
 /** Database hostname */
-define( 'DB_HOST', 'maria:3306' ); //DB_HOST: mariadb:3306
+define( 'DB_HOST', 'mariadb:3306' );
 
 /** Database charset to use in creating database tables. */
 define( 'DB_CHARSET', 'utf8' );

@@ -5,6 +5,7 @@ services:
         build: requirements/nginx
         ports:
             - '443:443'
+        container_name: nginx
         volumes:
             - "/home/tchappui/data/wordpress:/var/www/html"
         env_file:
@@ -20,6 +21,7 @@ services:
         build: requirements/mariadb
         ports:
             - '3306:3306'
+        container_name: mariadb
         volumes:
             - "/home/tchappui/data/db-data:/var/lib/mysql"
         env_file:
@@ -33,6 +35,7 @@ services:
         build: requirements/wordpress
         ports:
         - '9000:9000'
+        container_name: wordpress
         volumes:
             - "/home/tchappui/data/wordpress:/var/www/html"
         env_file:
@@ -44,7 +47,8 @@ services:
         restart: always
 
 networks:
-  inception: 
+  inception:
+    driver: bridge 
 volumes:
     wordpress:
     db-data:

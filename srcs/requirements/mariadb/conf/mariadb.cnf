@@ -9,7 +9,7 @@
 [mysqld]
 skip-grant-tables
 skip-networking
-
+					
 # Galera-related settings
 [galera]
 # Mandatory settings
