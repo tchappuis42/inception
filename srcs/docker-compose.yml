@@ -17,7 +17,7 @@ services:
         restart: always
 
     mysql:
-        tty: true
+      #tty: true
         build: requirements/mariadb
         ports:
             - '3306:3306'
