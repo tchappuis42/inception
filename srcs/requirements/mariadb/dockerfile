@@ -10,4 +10,4 @@ COPY ./conf/mariadb.cnf /etc/my.cnf.d/
 COPY ./tools/maria.sh .
 RUN chmod +x "./maria.sh"
 
-#CMD ["./maria.sh"]
+CMD ["./maria.sh"]

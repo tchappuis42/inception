@@ -15,7 +15,7 @@ RM		= rm -rf
 
 SRCS	= -f srcs/docker-compose.yml
 
-DOCKERCOMPOSE	= docker-compose
+DOCKERCOMPOSE	= sudo docker-compose
 
 BUILD = build
 
