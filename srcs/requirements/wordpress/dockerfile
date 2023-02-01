@@ -6,4 +6,5 @@ RUN sed -i "s|listen = 127.0.0.1:9000|listen = 0.0.0.0:9000|g" /etc/php7/php-fpm
 COPY ./conf/wp-config.php .
 COPY ./tools/wordpress.sh .
 
-CMD ["sh", "wordpress.sh"]
+ENTRYPOINT ["sh", "wordpress.sh"]
+CMD ["./usr/sbin/php-fpm7 -F]
