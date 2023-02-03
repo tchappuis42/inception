@@ -1,6 +1,10 @@
 #!/bin/sh
+echo 1
 mysql_install_db --user=mysql --datadir=/var/lib/mysql
+echo 2
 mariadbd-safe --no-watch
+echo 3
+sleep 1
 mysql --user=root -p$MYSQL_ROOT_PASSWORD -e "
 FLUSH PRIVILEGES;
 ALTER USER 'root'@'localhost' IDENTIFIED BY '$MYSQL_ROOT_PASSWORD';
@@ -13,6 +17,7 @@ FLUSH PRIVILEGES;"
 #touch /var/lib/mysql/$DATABASE_NAME
 #touch /var/lib/mysql/$MYSQL_USER
 #touch /var/lib/mysql/1$MYSQL_PASSWORD
-
+echo 4
 mysqladmin -u root -p$MYSQL_ROOT_PASSWORD shutdown
-#mariadbd-safe
+echo 5
+mariadbd-safe

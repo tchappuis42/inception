@@ -9,5 +9,4 @@ RUN mkdir /var/run/mysqld; \
 COPY ./conf/mariadb.cnf /etc/my.cnf.d/
 COPY ./tools/maria.sh .
 RUN chmod +x "./maria.sh"
-#ENTRYPOINT ["./maria.sh"]
-#CMD ["mariadbd-safe"]
+CMD ["./maria.sh"]
