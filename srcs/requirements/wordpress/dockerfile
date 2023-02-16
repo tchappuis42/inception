@@ -1,8 +1,9 @@
 FROM alpine:3.15
 
-RUN apk update && apk upgrade && apk add php7 php7-fpm php7-mysqli
+RUN apk update && apk upgrade && apk add php8 php8-fpm php8-mysqli
 RUN wget http://wordpress.org/latest.tar.gz && tar -xzvf latest.tar.gz;
-RUN sed -i "s|listen = 127.0.0.1:9000|listen = 0.0.0.0:9000|g" /etc/php7/php-fpm.d/www.conf
+RUN sed -i "s|listen = 127.0.0.1:9000|listen = 0.0.0.0:9000|g" /etc/php8/php-fpm.d/www.conf
+
 COPY ./conf/wp-config.php .
 COPY ./tools/wordpress.sh .
 

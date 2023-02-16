@@ -6,7 +6,7 @@ mv wordpress/* /var/www/html/
 #wget http://wordpress.org/latest.tar.gz;
 #tar -xzvf latest.tar.gz;
 #rm -rf latest.tar.gz
-#chmod 777 wordpress
+chmod 777 wordpress /var/www/html/wp-content/
 #mv wordpress/* .
 rm -rf wordpress/ latest.tar.gz
 ./usr/sbin/php-fpm7 -F;
