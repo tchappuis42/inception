@@ -11,7 +11,7 @@ if [ ! -d "/var/lib/mysql/mysql" ]; then
                 return 1
         fi
 fi
-if [ ! -d "/var/lib/mysql/wordpress" ]; then
+if [ ! -d "/var/lib/mysql/mariaDB" ]; then
 
         cat << EOF > $tfile
 USE mysql;
