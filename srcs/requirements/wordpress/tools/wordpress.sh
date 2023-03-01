@@ -6,11 +6,15 @@ if [ ! -f /var/www/html/wp-config.php ] ; then
 	wp core download --allow-root
 
 	mv wordpress/* /var/www/html/
-	mv wp-config.php /var/www/html/
 	rm -rf wordpress/ wordpress-6.0-fr_FR.tar.gz
-	#cd /var/www/html/
-
-	echo $MYSQL_USER
+	
+	wp config create	--allow-root \
+						--dbname=$DATABASE_NAME \
+						--dbuser=$MYSQL_USER \
+						--dbpass=$MYSQL_PASSWORD \
+						--dbhost=$DB_HOST \
+						--path='/var/www/html/' >> log.txt
+	
 	wp core install		--url="tchappui.42.fr" \
 						--title="ft_containers" \
 						--admin_user=$MYSQL_USER \

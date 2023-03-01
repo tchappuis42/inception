@@ -21,7 +21,7 @@ BUILD = build
 
 UP = up -d
 
-all: build start 
+all: build up 
 
 mariadb: 
 		$(DOCKERCOMPOSE) $(SRCS) $(BUILD) mysql 
@@ -38,12 +38,17 @@ wordpress:
 build: 
 		$(DOCKERCOMPOSE) $(SRCS) $(BUILD)
 
-start:
+up:
 		$(DOCKERCOMPOSE) $(SRCS) $(UP)
 
-clean: 
-		$(DOCKERCOMPOSE) $(SRCS) down --volumes
+down:
+		$(DOCKERCOMPOSE) $(SRCS) down
+	
+clean:		down
+		docker system prune -a
+
+fclean:		clean 
 		$(RM) /home/tchappui/data/wordpress/*
 		$(RM) /home/tchappui/data/db-data/*
-		
-re:			clean all
+
+re:			fclean all
